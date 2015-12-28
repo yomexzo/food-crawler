@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Food Crawler</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- [if lt IE 9]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[endif] -->
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="#">Food Crawler</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Info<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+					<h1 class="page-header" id="fp-header">Upcoming Events at the iSchool</h1>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="table-resposive">
+					<table class="table table-hover">
+						<tr>
+							<th>Date</th>
+							<th>Event</th>
+							<th>Description</th>
+						</tr>
+						<tr>
+							<td>Monday January 4th, 2016</td>
+							<td>iTea with Profession McCaffrey</td>
+							<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh sem, vulputate eget tincidunt maximus, eleifend non sapien. Aenean lobortis rhoncus dolor sit amet accumsan. Donec pretium commodo risus eget rutrum. In feugiat volutpat odio, non dignissim neque. Nulla rhoncus ornare urna, a condimentum eros pulvinar sit amet. Fusce bibendum augue id mi gravida, a aliquet tellus placerat. Vestibulum nec gravida enim. Donec mauris orci, interdum a enim eget, pulvinar rhoncus sapien. Aliquam erat volutpat. </td>
+						</tr>
+						<tr>
+							<td>Tuesday January 5th, 2016</td>
+							<td>Inter-University Conference</td>
+							<td>Suspendisse id malesuada tortor, in pellentesque arcu. Mauris pulvinar, nibh ut vestibulum egestas, ante magna tincidunt nulla, et ultrices lacus urna nec eros. Nunc vestibulum arcu neque, sed hendrerit lorem ultricies in. Curabitur vitae lobortis ligula. Pellentesque hendrerit justo quis tincidunt eleifend. Integer vel arcu in massa suscipit vehicula a ut felis. Pellentesque mollis enim eget eros gravida, quis hendrerit sapien tincidunt. Mauris finibus urna urna, laoreet feugiat urna tincidunt in. Praesent a tincidunt lacus, eget commodo orci. </td>
+						</tr>
+						<tr>
+							<td>Wednesday January 6th, 2016</td>
+							<td>iSchool Drone Showcase</td>
+							<td>Donec mollis euismod nisi, vel lobortis odio sagittis eu. Duis dapibus luctus erat, a ultricies augue blandit non. Maecenas lobortis viverra ipsum quis tincidunt. Nulla pharetra nulla quis dui porttitor volutpat. Quisque volutpat tincidunt neque ut tincidunt. Ut euismod elementum justo sit amet cursus. Praesent in erat finibus velit accumsan ornare in a leo. Nulla sed consequat odio. Proin nec iaculis est. Aenean imperdiet tempus metus ac euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer varius, tortor et rutrum aliquam, arcu libero posuere magna, ac egestas urna tortor at est. Sed tincidunt aliquet dignissim. </td>
+						</tr>
+						<tr>
+							<td>Thursday January 7th, 2016</td>
+							<td>Virtual Reality Seminar with Dr. Ben Johnson</td>
+							<td>Proin convallis velit rutrum maximus ullamcorper. Praesent aliquam mattis tristique. Proin ut pellentesque ex, in condimentum metus. Aenean in magna et massa posuere venenatis. Integer eget sagittis velit, vel luctus mi. Phasellus at bibendum nulla. Suspendisse vulputate quam et quam rutrum, ut tristique sapien rutrum. Quisque nec aliquet augue, sed volutpat est. Nullam iaculis pellentesque mollis. Quisque placerat, ex id egestas lacinia, lorem nisi aliquam lorem, a lobortis purus felis eget orci. Nunc aliquet faucibus eros, eget malesuada ex pretium at. Pellentesque imperdiet lacus felis, vitae commodo sem ullamcorper in. </td>
+						</tr>
+						<tr>
+							<td>Friday January 8th, 2016</td>
+							<td>Knowledge Media Design Competition</td>
+							<td>Aenean maximus ultricies semper. Morbi nec nulla semper, rhoncus felis non, aliquam quam. Phasellus sit amet leo varius, malesuada diam quis, tempus lorem. Maecenas elementum nunc in laoreet malesuada. Integer vehicula sodales lacus, sed commodo ligula condimentum a. Aliquam finibus et nisl non volutpat. Aliquam venenatis sodales urna, quis tincidunt ante fringilla vitae. Etiam sollicitudin quis nisi a venenatis. Fusce ut tempus eros. Duis ullamcorper, ipsum et commodo scelerisque, est sapien consectetur metus, eu fringilla sapien dolor et diam. Aenean porta, purus ac posuere fermentum, nulla nunc facilisis nibh, ac condimentum dui enim id diam. Duis dapibus metus non nibh consequat, non varius turpis auctor. Integer sit amet iaculis purus, ut efficitur quam. In tristique congue porttitor. Donec malesuada orci condimentum porta ullamcorper. Curabitur iaculis congue eleifend. </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</div>
+
+	<footer id="cus-footer">
+		<p>&copy Food Crawler 2016</p>
+	</footer>
+
+</body>
