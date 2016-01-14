@@ -12,7 +12,9 @@ current_event = {}
 calendar_depth = 0
 event_depth = 0
 title_found = False
-
+start_found = False
+end_found = False
+single_date_used = False
 
 class CalendarParser(HTMLParser):
   # function to handle an opening tag in the doc
@@ -46,34 +48,64 @@ class CalendarParser(HTMLParser):
       all_events.append(current_event)
       current_event = {} #reset
 
-
 class EventParser(HTMLParser):
 
   def handle_starttag(self, tag, attrs):
-    global title_found, event_depth, current_event
+    global title_found, event_depth, current_event, start_found, single_date_used, end_found
 
     for name, value in attrs:
       if name == 'class' and value == 'title':
         current_event['title'] = ''
         title_found = True
+      if name == 'class' and value == 'date-display-start':
+        start_found = True
+        current_event['start'] = ''
+      if name == 'class' and value == 'date-display-end':
+        end_found = True
+        current_event['end'] = ''
+      if name == 'class' and value == 'date-display-single':
+        single_date_used = True
+        current_event['single_date'] = ''
 
   def handle_endtag(self, tag):
-    global title_found
+    global title_found, start_found, current_event, end_found
 
     if tag == 'h1' and title_found:
       title_found = False
+    if tag == 'span' and start_found:
+      start_found = False
+    if tag == 'span' and end_found:
+      end_found = False
 
   def handle_data(self, data):
-    global title_found
+    global title_found, current_event, start_found, single_date_used, end_found
 
     if title_found:
       current_event['title'] += data
 
+    if start_found:
+      if 'single_date' in current_event:
+        current_event['start'] += current_event['single_date'] + data
+      else:
+        current_event['start'] += data
+
+    if end_found:
+      if 'single_date' in current_event:
+        current_event['end'] += current_event['single_date'] + data
+      else:
+        current_event['end'] += data
+
+    if single_date_used:
+      current_event['single_date'] += data
+      single_date_used = False
+
+
   def handle_entityref(self, data):
-    global title_found
+    global title_found, start_found, current_event
 
     if title_found:
       current_event['title'] += '&' + data + ';'
+
 
 @app.route("/")
 def main():
@@ -93,6 +125,7 @@ def main():
   response += '<table border="1" cellpadding="5">'
   response += '<tr>'
   response += '<th>Title</th>'
+  response += '<th>Duration</th>'
   response += '<th>HREF</th>'
   response += '</tr>'
   for event in all_events:
@@ -106,7 +139,8 @@ def main():
 
     response += '<tr>'
     response += '<td>' + event['title'] + '</td>'
-    response += '<td>' + event['href'] +'</td>'
+    response += '<td>' + event['start'] + ' to ' + event['end'] + '</td>'
+    response += '<td><a target="_blank" href="' + base_url + event['href'] +'">' + event['href'] +'</a></td>'
     response += '</tr>'
 
   # .has-events .view-item .view-field a
